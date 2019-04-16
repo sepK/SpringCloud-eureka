@@ -1,0 +1,32 @@
+spring:
+  profiles: first
+  application:
+    name: eureka-client01
+server:
+  port: 1003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kongTao:123456@localhost:1000/eureka/,http://kongTao:123456@localhost:1001/eureka/
+---
+spring:
+  profiles: second
+  application:
+    name: eureka-client02
+server:
+  port: 1004
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kongTao:123456@localhost:1000/eureka/,http://kongTao:123456@localhost:1001/eureka/
+---
+spring:
+  profiles: third
+  application:
+    name: eureka-client03
+server:
+  port: 1005
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kongTao:123456@localhost:1000/eureka/,http://kongTao:123456@localhost:1001/eureka/
