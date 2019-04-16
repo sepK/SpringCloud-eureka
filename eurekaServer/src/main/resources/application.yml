@@ -4,17 +4,16 @@ spring:
   profiles: node1
   application:
     name: eureka-server
+  security:
+    user:
+      name: kongTao
+      password: 123456
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://kongTao:123456@localhost:1001/eureka/
-security:
-  user:
-    name: kongTao
-    password: 123456
-  enable-csrf: false
 ---
 server:
   port: 1001
@@ -22,14 +21,13 @@ spring:
   profiles: node2
   application:
     name: eureka-server
+  security:
+    user:
+      name: kongTao
+      password: 123456
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://kongTao:123456@localhost:1000/eureka/
-security:
-  user:
-    name: kongTao
-    password: 123456
-  enable-csrf: false
